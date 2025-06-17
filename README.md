@@ -1,65 +1,56 @@
-# Sentiment Analysis for Customer Reviews
+# Sentiment Analysis on News Articles (Scikit-learn 20 Newsgroups)
 
-This repository contains a solution for performing sentiment analysis on a set of customer reviews. The goal is to classify each review as either **positive** or **negative** based on its content.
+This repository contains a sentiment classification project using the `20 Newsgroups` dataset (specifically from `rec.autos` and `sci.med` categories) as a proxy for positive and negative sentiment. The goal is to classify article text as either **positive** or **negative** using machine learning.
 
-## Dataset
+---
 
-The dataset consists of 20 customer reviews along with their corresponding sentiment labels:
+## 📚 Dataset Description
 
-- `1` indicates a **positive sentiment**.
-- `0` indicates a **negative sentiment**.
+- Dataset used: **Scikit-learn's 20 Newsgroups**  
+- Categories used:
+  - `rec.autos` → interpreted as **Negative**
+  - `sci.med` → interpreted as **Positive**
 
-### Example Data:
+This allows us to simulate a binary sentiment task using real-world text data.
 
-| Review                                         | Sentiment |
-|------------------------------------------------|-----------|
-| Great product, very useful!                    | 1         |
-| Absolutely terrible. Waste of money.           | 0         |
-| I love it. Will buy again.                     | 1         |
-| Not worth the price.                           | 0         |
-| Fantastic service and quality.                 | 1         |
-| Worst purchase I've made.                      | 0         |
-| Highly recommended!                            | 1         |
-| Poor quality and bad customer service.         | 0         |
-| Excellent item, works perfectly.               | 1         |
-| Don't buy this, it's a scam.                   | 0         |
-| This is amazing, exceeded expectations!        | 1         |
-| Garbage, broke after one use.                  | 0         |
-| Truly wonderful experience.                    | 1         |
-| Disappointed and frustrated.                   | 0         |
-| Will definitely order again.                   | 1         |
-| Not what I expected. Very poor.                | 0         |
-| Five stars! Outstanding.                       | 1         |
-| Never buying this again.                       | 0         |
-| Loved it so much!                              | 1         |
-| Cheap material and arrived late.               | 0         |
+---
 
-## Project Overview
+## 🔍 Project Workflow
 
-This project applies sentiment analysis on a set of customer reviews to classify the sentiment as positive or negative. The process involves:
-- Preprocessing the text data (removing stop words, stemming, etc.).
-- Using machine learning techniques (e.g., Naive Bayes, SVM, or any other classifier).
-- Evaluating the model’s performance using accuracy, precision, recall, etc.
+1. **Preprocessing**:
+   - Removed headers, footers, and quotes
+   - Applied TF-IDF vectorization
 
-The main objectives of this project are:
-1. Learn how to perform text preprocessing.
-2. Apply machine learning models to text data.
-3. Evaluate and interpret the performance of sentiment analysis models.
+2. **Model**:
+   - Logistic Regression trained on TF-IDF features
+   - 80-20 train-test split
 
-## Requirements
+3. **Evaluation Metrics**:
+   - Accuracy Score
+   - Confusion Matrix
+   - Classification Report (Precision, Recall, F1)
 
-Before running the code, ensure that the required dependencies are installed:
+---
 
-- **Python 3.x** or above
-- **Libraries:**
-  - pandas
-  - numpy
-  - scikit-learn
-  - nltk (for text preprocessing)
-  - matplotlib (optional, for data visualization)
-  - seaborn (optional, for data visualization)
+## 🎯 Final Performance
 
-You can install the dependencies using pip:
+- ✅ **Accuracy Score:** ~90%  
+- 📋 **Classification Report:** Includes precision, recall, and F1 for both classes  
+- 📊 Confusion matrix included for visual interpretation
+
+---
+
+## 🧠 Objective
+
+- Learn end-to-end sentiment analysis on text
+- Apply scikit-learn pipelines: vectorization → training → evaluation
+- Visualize and interpret results
+
+---
+
+## 💻 Requirements
+
+Before running the code, ensure the following dependencies are installed:
 
 ```bash
-pip install pandas numpy scikit-learn nltk matplotlib seaborn
+pip install pandas scikit-learn matplotlib seaborn
